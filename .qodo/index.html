@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brutal Chess Simulation</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>🔥 BRUTAL CHESS SIMULATION 🔥</h1>
+    <p class="subtitle">
+      Watch an aggressive chess game unfold to its brutal conclusion
+    </p>
+
+    <div class="controls">
+      <button id="startBtn">Start Simulation</button>
+      <button id="resetBtn">Reset Game</button>
+      <div class="speed-control">
+        <label>Speed:</label>
+        <input type="range" id="speedSlider" min="100" max="2000" value="800" />
+        <span id="speedValue">0.8s</span>
+      </div>
+    </div>
+
+    <div class="game-container">
+      <div class="board-container">
+        <div class="chessboard" id="chessboard"></div>
+      </div>
+
+      <div class="game-info">
+        <div class="status playing" id="gameStatus">
+          Ready to start brutal simulation
+        </div>
+
+        <div class="captured-pieces">
+          <div class="captured-group">
+            <h3>White Casualties 💀</h3>
+            <div class="captured-list" id="whiteCaptured"></div>
+          </div>
+          <div class="captured-group">
+            <h3>Black Casualties 💀</h3>
+            <div class="captured-list" id="blackCaptured"></div>
+          </div>
+        </div>
+
+        <div class="move-list" id="moveList">
+          <h3>Battle Log</h3>
+          <div id="moves"></div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

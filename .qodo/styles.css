@@ -1,0 +1,201 @@
+body {
+  font-family: "Courier New", monospace;
+  background: #1a1a1a;
+  color: #fff;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-container {
+  display: flex;
+  gap: 30px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.board-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chessboard {
+  display: grid;
+  grid-template-columns: repeat(8, 60px);
+  grid-template-rows: repeat(8, 60px);
+  border: 3px solid #8b4513;
+  background: #654321;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+.square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: bold;
+  border: 1px solid #444;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.square.light {
+  background: #f0d9b5;
+  color: #333;
+}
+
+.square.dark {
+  background: #b58863;
+  color: #fff;
+}
+
+.square.highlight {
+  box-shadow: inset 0 0 0 3px #ff4444;
+  transform: scale(1.05);
+}
+
+.square.capture {
+  background: #ff6b6b !important;
+  animation: captureFlash 0.5s ease;
+}
+
+@keyframes captureFlash {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.game-info {
+  flex: 1;
+  background: #2a2a2a;
+  padding: 20px;
+  border-radius: 10px;
+  height: 600px;
+  overflow-y: auto;
+}
+
+.controls {
+  margin: 20px 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+button {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #45a049;
+}
+
+button:disabled {
+  background: #666;
+  cursor: not-allowed;
+}
+
+.speed-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+input[type="range"] {
+  width: 100px;
+}
+
+.move-list {
+  background: #1a1a1a;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.move {
+  padding: 5px;
+  margin: 2px 0;
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.move.current {
+  background: #444;
+  color: #ffff00;
+}
+
+.status {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.status.playing {
+  background: #2196f3;
+}
+
+.status.checkmate {
+  background: #f44336;
+  animation: pulse 1s infinite;
+}
+
+.status.stalemate {
+  background: #ff9800;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.captured-pieces {
+  margin-top: 15px;
+}
+
+.captured-group {
+  margin: 10px 0;
+}
+
+.captured-list {
+  font-size: 20px;
+  margin: 5px 0;
+}
+
+h1 {
+  color: #ff4444;
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.subtitle {
+  text-align: center;
+  color: #ccc;
+  font-style: italic;
+  margin-bottom: 30px;
+}
