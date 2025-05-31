@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Brutal Chess Simulation</title>
     <link rel="stylesheet" href="styles.css" />
+    <!-- SVG favicon for modern browsers -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♔</text></svg>"
+    />
+    <!-- PNG favicon fallback -->
+    <link rel="icon" type="image/png" href="favicon.png" />
   </head>
   <body>
     <h1>🔥 BRUTAL CHESS SIMULATION 🔥</h1>
@@ -14,6 +22,8 @@
 
     <div class="controls">
       <button id="startBtn">Start Simulation</button>
+      <!-- Pause button toggles between Pause and Resume via JS -->
+      <button id="pauseBtn">Pause</button>
       <button id="resetBtn">Reset Game</button>
       <div class="speed-control">
         <label>Speed:</label>
@@ -49,6 +59,11 @@
         </div>
       </div>
     </div>
+    <footer
+      style="margin-top: 40px; text-align: center; color: #aaa; font-size: 1em"
+    >
+      © 2025 Brutal Chess Simulation &mdash; Made with ♟️ and ☕
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>
